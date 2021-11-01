@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Modal,
   ModalOverlay,
@@ -19,5 +21,21 @@ export function ModalViewImage({
   onClose,
   imgUrl,
 }: ModalViewImageProps): JSX.Element {
-  // TODO MODAL WITH IMAGE AND EXTERNAL LINK
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent bgColor="transparent">
+        <ModalBody>
+          <Image
+           maxWidth="900px"
+            maxHeight="600px"
+            src={imgUrl}
+            alt="Imagem" />
+        </ModalBody>
+        <ModalFooter maxWidth="900px" backgroundColor="pGray.800">
+          <Link href={imgUrl} position="absolute" maxWidth="900px" left="10px" color='pGray.50' border="none" isExternal>Abrir original</Link>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  )
 }

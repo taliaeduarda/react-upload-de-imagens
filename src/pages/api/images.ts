@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { NextApiRequest, NextApiResponse } from 'next';
 import fauna from 'faunadb';
 
